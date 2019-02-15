@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+</head>
+<style>
+    .wlacznik {
+        width: 80px;
+        height: 30px;
+        border: 1px solid grey;
+        background: grey;
+    }
+</style>
+</head>
+<body>
+<h1>Zadanie B</h1>
+
+<!--W dokumencie znajdują się trzy "włączniki" (odpowiednio ostylowane elementy DIV). 
+Kliknięcie lewym przyciskiem myszy powoduje włączenie włącznika (zmienia się wtedy jego styl), kolejne kliknięcie - jego wyłączenie. 
+Poniżej wyświetlany jest komunikat informujący ile włączyników jest w danej chwili włączonych (np. "wszystkie włączone", "dwa włączone", etc.).-->
+
+<h2>Zadanie 1</h2>
+<div id="wlacznik1" class="wlacznik">Włącznik 1</div></br>
+<div id="wlacznik2" class="wlacznik">Włącznik 2</div></br>
+<div id="wlacznik3" class="wlacznik">Włącznik 3</div></br>
+<div id="on"></div>
+
+<!--Stwórz tablicę o rozmiarze podanym przez użytkownika. Pierwsza wartość w tablicy powinna wynosić 3. Każda kolejna różni się od poprzedniej o losową wartość od -3 do 3. 
+Wyświetl tablicę w dokumencie. Wyświetl informację ile jest w niej par takich samych elementów obok siebie (np. dla tablicy [3, 5, 5, 4, 2, 3, 3, 5] są to dwie pary: para piątek i para trójek).-->
+
+<h2>Zadanie 2</h2>
+<form>
+    Podaj rozmiar tabeli:</br></br>
+    <input type="text" placeholder="Podaj rozmiar tablicy:" id="rozmiar">
+    <input type="button" id="Submit2" value="OK" onclick = dodaj()></br></br>    
+</form>
+<script src="scripts.js"></script>
+<div id="tablica_wynik"></div>
+<div id="para_liczb"></div>
+
+<!--Stwórz listę (typu UL) wypełnioną losowymi "słowami" (słowo to po prostu ciąg od 4 do 10 losowych znaków). 
+Jeśli klikniemy któreś ze słów, wyświetli się (w elemencie) informacja ile razy zostało ono kliknięte oraz o której godzinie (wraz z sekundami) kliknięto je ostatnio.-->
+
+<h2>Zadanie 3</h2>
+<div id="root"></div>
+<div id="time"></div>
+<form>
+    Podaj liczbę słów do wygenerowania:</br></br>
+    <input type="text" placeholder="Wpisz liczbę słów" id="liczba_slow">
+    <input type="button" id="Submit3" value="OK" onclick = pokaz_slowa()></br></br>    
+</form>
+
+<ul id="lista_slow"></ul>
+
+<!--Użytkownik podaje dwie wartości - liczbę wierszy i kolumn tabeli. 
+Program tworzy tabelę, następnie wypełnia ją losowymi wartościami (od 1 do 100). 
+Największa wartość zostaje oznaczona kolorem czerwonym, a najmniejsza - zielonym. Wartości parzyste zostają wytłuszczone.-->
+
+<h2>Zadanie 4</h2>
+<form>
+    Podaj liczbę wierszy i liczbę kolumn do wygenerowania tabeli:</br></br>
+        <input type="text" placeholder="Wpisz liczbę wierszy" id="wiersz"/>
+        <input type="text" placeholder="Wpisz liczbę kolumn" id="kolumna"/>
+        <input type="button" id="Submit4" value="OK" onclick = "tworz_tabele()"/></br></br>    
+    </form>
+    <div id="zad4"></div>
+
+<!--Kolejka do elektronicznego systemu obsługi: do dyspozycji mamy dwa przyciski "nowy klient" (dodaje klienta do kolejki) 
+oraz "obsłuż klienta" (klient pierwszy w kolejce zostaje obsłużony i usunięty). 
+Poniżej wyświetlany jest stan kolejki (np. w postaci poziomej tabeli). 
+Jeszcze niżej wyświetlana jest lista wykonanych operacji (najnowsza operacja znajduje się na górze): "klient X pojawił się o godzinie GG:MM:SS" 
+albo "klient X został obsłużony o godzinie GG:MM:SS". 
+Klienci są reprezentowani przez kolejne wartości całkowite rozpoczynając od 1. 
+Maksymalny rozmiar kolejki to 10 - próba dodania nowego klienta skutkuje komunikatem "dla klienta X nie ma miejsca w kolejce".-->
+
+<h2>Zadanie 5</h2>
+    <form>
+    Elektroniczny system obsługi klientów:</br></br>
+        <input type="button" id="nowy" value="Nowy klient" onclick = nowy_klient()>    
+        <input type="button" id="obsluz" value="Obsłuż klienta" onclick = obsluz_klienta()></br></br>    
+    </form>
+    <div id="stan_kolejki"></div>
+    <div id="historia"></div>    
+</body>
+</html>
